@@ -6,7 +6,7 @@ const app = express();
 const port = process.env.PORT || 3900;
 var mongoose = require('mongoose');
 
-var url = "mongodb+srv://codenautas2:codenautas2020@cluster0.2fafc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+var url = "mongodb+srv://marcosTFG:223467@cluster0.bty1h.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 
 mongoose.Promise = global.Promise;
