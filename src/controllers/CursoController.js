@@ -9,10 +9,9 @@ var controller =
         var params = req.body;
 
         var curso = new Curso();
-
-        curso.tipo = params.tipo;
+        curso.anyo = params.anyo;
         curso.nombre = params.nombre;
-        curso.poblacion = params.poblacion;
+        curso.carrera = params.carrera;
         curso.entidad = params.entidad;
         curso.fecha_ini = params.fecha_ini;
         curso.fecha_fin = params.fecha_fin;
@@ -108,9 +107,9 @@ var controller =
         var params = req.body;
         var newParams =
         {
-            tipo : params.tipo,
+            anyo : params.anyo,
             nombre : params.nombre,
-            poblacion : params.poblacion,
+            carrera : params.carrera,
             entidad : params.entidad,
             fecha_ini : params.fecha_ini,
             fecha_fin : params.fecha_fin,

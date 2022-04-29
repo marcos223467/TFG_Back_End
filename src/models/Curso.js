@@ -5,9 +5,9 @@ var Schema = mongoose.Schema
 
 var CursoSchema = new Schema({
 
-    tipo : String,
+    anyo : String,
     nombre : String,
-    poblacion : String,
+    carrera : String,
     entidad : String,
     fecha_ini : Date,
     fecha_fin : Date,
