@@ -9,7 +9,8 @@ var AsistenciaSchema = new Schema({
     nombre_alumno : String,
     nombre_curso : String,
     fecha : String,
-    estado : String
+    estado : String,
+    justificada: String,
 })
 
 module.exports = mongoose.model('Asistencia', AsistenciaSchema);
