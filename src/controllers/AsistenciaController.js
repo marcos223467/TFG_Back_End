@@ -34,6 +34,24 @@ var controller =
                 });
         });
     },
+
+    //HAY QUE VER COMO USAR JQUERY
+    save_file: (req, res) =>
+    {
+        var file = req.params.file;
+
+        jquery.fetch('controllers/FileUploadController.php', {
+            method: 'post',
+            headers: {
+                'Accept' : 'application/json'
+            },
+            body: file
+        });
+
+        return res.status(200).send({
+            status: 'success'
+        })
+    },
     getAsistencias: (req, res) => 
     {
         var curso = req.params.curso;

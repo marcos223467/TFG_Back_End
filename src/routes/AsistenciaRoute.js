@@ -8,6 +8,8 @@ var router = express.Router();
 
 router.post('/save_asistencia', Asistencia.save);
 
+router.post('/save_file', Asistencia.save_file);
+
 router.get('/asistencias/:curso', Asistencia.getAsistencias);
 
 router.get('/asistencias_curso/:curso', Asistencia.getAsistenciasCurso);

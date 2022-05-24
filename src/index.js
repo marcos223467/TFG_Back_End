@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 3900;
 var mongoose = require('mongoose');
+var jquery = require('jquery');
 
 var url = "mongodb+srv://marcosTFG:223467@cluster0.bty1h.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
