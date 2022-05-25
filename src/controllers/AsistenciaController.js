@@ -1,6 +1,7 @@
 'use strict'
 
 var Asistencia = require('../models/Asistencia');
+var jquery = require('jquery');
 
 var controller =
 {
