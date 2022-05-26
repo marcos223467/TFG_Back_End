@@ -42,13 +42,13 @@ const storage = multer.diskStorage({
         cb(null, 'justificantes')
     },
     filename: (req, file, cb) =>{
-        cb(null, Date.now() + '-' + file.originalname)
+        cb(null, file.originalname)
     }
 })
 
 const upload = multer({storage}).single('file');
 
-app.post('upload', (req, res) => {
+app.post('/upload', (req, res) => {
     upload(req, res, (err) => {
         if(err){
             return res.status(500).json(err)
