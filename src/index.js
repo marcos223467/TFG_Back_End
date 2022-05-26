@@ -1,6 +1,8 @@
 'use strict'
 
 const express = require('express')
+const multer = require('multer');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 3900;
@@ -32,6 +34,29 @@ app.use('/api', alumno_routes);
 app.use('/api', curso_routes);
 app.use('/api',user_routes);
 app.use('/api', asistencia_routes);
+
+app.use(cors());
+
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'justificantes')
+    },
+    filename: (req, file, cb) =>{
+        cb(null, Date.now() + '-' + file.originalname)
+    }
+})
+
+const upload = multer({storage}).single('file');
+
+app.post('upload', (req, res) => {
+    upload(req, res, (err) => {
+        if(err){
+            return res.status(500).json(err)
+        }
+
+        return res.status(200).send(req.file)
+    })
+});
 
 mongoose.connect(url, { useNewUrlParser: true }).then(() =>{
 

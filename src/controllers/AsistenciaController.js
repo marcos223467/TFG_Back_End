@@ -1,7 +1,6 @@
 'use strict'
 
 var Asistencia = require('../models/Asistencia');
-var jquery = require('jquery');
 
 var controller =
 {
@@ -36,23 +35,6 @@ var controller =
         });
     },
 
-    //HAY QUE VER COMO USAR JQUERY
-    save_file: (req, res) =>
-    {
-        var file = req.params.file;
-
-        jquery.fetch('controllers/FileUploadController.php', {
-            method: 'post',
-            headers: {
-                'Accept' : 'application/json'
-            },
-            body: file
-        });
-
-        return res.status(200).send({
-            status: 'success'
-        })
-    },
     getAsistencias: (req, res) => 
     {
         var curso = req.params.curso;
@@ -185,6 +167,37 @@ var controller =
                     alasis
                 });
         });
+    },
+
+    getAsistencia_ID: (req, res) => 
+    {
+        var id = req.params.id
+        var query = Asistencia.find({_id : id});
+        query.exec((err, asistencia) =>
+        {
+            if(err)
+            {
+                return res.status(500).send({
+                    status: "error",
+                    message: "Error al extraer la asistencia"
+                })
+            }
+
+            if(!asistencia)
+            {
+                return res.status(404).send(
+                {
+                    status:"error",
+                    message: "No hay asistencia para mostrar"
+                });
+            }
+
+            return res.status(200).send(
+                {
+                    status:"success",
+                    asistencia
+                });
+        })
     },
 
     edit: (req, res) => 
