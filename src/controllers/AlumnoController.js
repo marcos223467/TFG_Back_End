@@ -13,9 +13,7 @@ var controller =
         alumno.nombre = params.nombre;
         alumno.apellidos = params.apellidos;
         alumno.fecha_nacimiento = params.fecha_nacimiento;
-        alumno.edad = params.edad;
         alumno.cursos = params.cursos;
-        alumno.activo = params.activo;
 
         alumno.save((err,alumnoStored) =>
         {
@@ -144,9 +142,7 @@ var controller =
             nombre : params.nombre,
             apellidos : params.apellidos,
             fecha_nacimiento : params.fecha_nacimiento,
-            edad : params.edad,
             cursos : params.cursos,
-            activo : params.activo
         };
         Alumno.findOneAndUpdate({_id:alumnoId},newParams,(err, alumnoUpdate) =>
         {

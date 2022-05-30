@@ -9,7 +9,8 @@ var UserSchema = new Schema({
     password : String,
     nombre : String,
     apellidos : String,
-    tipo : String
+    tipo : String,
+    cursos: []
 
 })
 

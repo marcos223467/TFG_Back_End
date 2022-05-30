@@ -8,9 +8,7 @@ var AlumnoSchema = new Schema({
     nombre : String,
     apellidos : String,
     fecha_nacimiento : Date,
-    edad : Number,
     cursos : [],
-    activo : Boolean
 })
 
 module.exports = mongoose.model('Alumno', AlumnoSchema);
