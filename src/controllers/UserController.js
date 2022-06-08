@@ -15,7 +15,6 @@ var controller =
         user.nombre = params.nombre;
         user.apellidos = params.apellidos;
         user.tipo = params.tipo;
-        user.cursos = params.cursos;
 
         user.save((err,userStored) =>
         {
@@ -110,8 +109,7 @@ var controller =
             email : params.email,
             nombre : params.nombre,
             apellidos : params.apellidos,
-            tipo : params.tipo,
-            cursos : params.cursos
+            tipo : params.tipo
         };
 
         User.findOneAndUpdate({_id:userId}, newParams, (err, userUpdate) =>
