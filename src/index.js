@@ -58,6 +58,11 @@ app.post('/upload', (req, res) => {
     })
 });
 
+app.get("/justificantes/:nombre", (req,res) =>
+{
+    res.download("./justificantes/" + req.params.nombre);
+})
+
 mongoose.connect(url, { useNewUrlParser: true }).then(() =>{
 
 	console.log('Conexión con la BDD realizada con éxito!!!')
