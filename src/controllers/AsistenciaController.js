@@ -16,6 +16,7 @@ var controller =
         asistencia.fecha = params.fecha;
         asistencia.estado = params.estado;
         asistencia.justificada = params.justificada;
+        asistencia.justificacion = params.justificacion;
         asistencia.save((err,asistenciaStored) =>
         {
             if(err || !asistenciaStored)
@@ -212,7 +213,8 @@ var controller =
             nombre_curso : params.nombre_curso,
             fecha : params.fecha,
             estado : params.estado,
-            justificada : params.justificada
+            justificada : params.justificada,
+            justificacion : params.justificacion
         };
         Asistencia.findOneAndUpdate({_id:asistenciaId},newParams,(err, asistenciaUpdate) =>
         {

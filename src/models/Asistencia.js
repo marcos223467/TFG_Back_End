@@ -11,6 +11,7 @@ var AsistenciaSchema = new Schema({
     fecha : String,
     estado : String,
     justificada: String,
+    justificacion: String,
 })
 
 module.exports = mongoose.model('Asistencia', AsistenciaSchema);
